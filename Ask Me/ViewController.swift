@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var answerImageView: UIImageView!
+    
+    let answersArray = [#imageLiteral(resourceName: "ball1"), #imageLiteral(resourceName: "ball5"), #imageLiteral(resourceName: "ball5"), #imageLiteral(resourceName: "ball3"), #imageLiteral(resourceName: "ball2")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        answerImageView.image = nil
     }
 
-
+    
+    @IBAction func askButtonPressed(_ sender: UIButton) {
+        answerImageView.image = answersArray.randomElement()
+    }
 }
 
